@@ -3,7 +3,7 @@ import { Schema, model } from 'mongoose'
 const required = true
 
 const villagersSchema = new Schema({
-    fullName: {
+    fullname: {
         type: String,
         required,
         unique: true

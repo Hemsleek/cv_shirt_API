@@ -1,9 +1,7 @@
+import { registration, registrationPolicy } from './villagers'
+
 const router = require('express').Router()
 
-router.get('/registration', (req, res) => {
-
-    res.json({ 'message': 'got here' })
-
-})
+router.get('/registration', registrationPolicy, registration)
 
 export default router 

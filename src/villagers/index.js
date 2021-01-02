@@ -1,1 +1,2 @@
-export { villager } from './villagersModel'
+export { registration } from './villagersServices'
+export { registrationPolicy } from './villagersPolicy'
