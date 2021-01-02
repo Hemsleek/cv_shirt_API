@@ -4,7 +4,7 @@ const joiString = joi.string().required()
 
 export const registrationPolicy = async (req, res, next) => {
     const regSchema = joi.object({
-        fullname: joi.string().min(3).required().unique(),
+        fullname: joi.string().min(3).required(),
         color: joiString,
         size: joiString,
         pattern: joiString,

@@ -2,6 +2,6 @@ import { registration, registrationPolicy } from './villagers'
 
 const router = require('express').Router()
 
-router.get('/registration', registrationPolicy, registration)
+router.post('/registration', registrationPolicy, registration)
 
 export default router 

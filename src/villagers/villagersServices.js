@@ -7,6 +7,7 @@ export const registration = async (req, res) => {
         res.json(newVillager)
     }
     catch (err) {
+        console.log(JSON.stringify(err, null, 2))
         res.status(500).json({ message: 'internal server response' })
     }
 }
