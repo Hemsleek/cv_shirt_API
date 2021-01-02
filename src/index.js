@@ -4,6 +4,7 @@ import morgan from 'morgan'
 import helmet from 'helmet'
 import mongoose from 'mongoose'
 import { dbURL, port } from './utils/config'
+import apiRoutes from './routes'
 
 const app = express()
 
@@ -21,6 +22,8 @@ app.use(express.json())
 app.use(helmet())
 app.use(morgan('dev'))
 app.use(cors())
+
+app.use('/api', apiRoutes)
 
 app.get('/', (req, res) => {
     res.send('Hello villagers😀')
