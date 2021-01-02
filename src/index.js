@@ -2,8 +2,20 @@ import express from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
 import helmet from 'helmet'
+import mongoose from 'mongoose'
+import { dbURL, port } from './utils/config'
 
 const app = express()
+
+mongoose.connect(dbURL, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true
+})
+
+const db = mongoose.connection
+db.on('error', console.log)
+db.once('open', () => { console.log('DB connection successful') })
 
 app.use(express.json())
 app.use(helmet())
@@ -14,6 +26,7 @@ app.get('/', (req, res) => {
     res.send('Hello villagers😀')
 })
 
-app.listen(9090, () => {
-    console.log('Server is running on port 9090')
+app.listen(port, () => {
+    console.log('Server is running on port', port)
+    console.log(`http://localhost:${port}`)
 })
