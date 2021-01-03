@@ -1,4 +1,4 @@
-import { allVillagers, registration, registrationPolicy } from './villagers';
+import registrationPolicy, { allVillagers, registration } from './villagers';
 
 const router = require('express').Router();
 

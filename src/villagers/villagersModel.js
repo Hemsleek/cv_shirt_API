@@ -1,28 +1,27 @@
-import { Schema, model } from 'mongoose'
+import { Schema, model } from 'mongoose';
 
-const required = true
+const required = true;
 
 const villagersSchema = new Schema({
-    fullname: {
-        type: String,
-        required,
-        unique: true
-    },
-    color: { type: String, required },
-    size: {
-        type: String,
-        required
-    },
-    pattern: {
-        type: String,
-        required
-    },
-    logo: {
-        type: Array,
-        required
-    }
+  fullname: {
+    type: String,
+    required,
+    unique: true,
+  },
+  color: { type: String, required },
+  size: {
+    type: String,
+    required,
+  },
+  pattern: {
+    type: String,
+    required,
+  },
+  logo: {
+    type: Array,
+    required,
+  },
 
-}, { timestamps: true }
-)
+}, { timestamps: true });
 
-export const villager = model('Villager', villagersSchema)
+export default model('Villager', villagersSchema);
