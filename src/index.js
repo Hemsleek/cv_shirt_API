@@ -27,7 +27,10 @@ app.use(cors());
 app.use('/api', apiRoutes);
 
 app.get('/', (req, res) => {
-  res.send('Hello villagers😀');
+  res.json({
+    message: 'Hello villagers😀',
+    hint: 'Try navigating to /api/***😛 , consume away🚀',
+  });
 });
 
 app.listen(port, () => {

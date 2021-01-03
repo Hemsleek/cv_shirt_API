@@ -5,7 +5,7 @@ export const registration = async (req, res) => {
   try {
     const newVillager = await new Villager(data).save();
     res.json({
-      id: newVillager.id,
+      _id: newVillager.id,
       fullname: newVillager.fullname,
       color: newVillager.color,
       size: newVillager.size,
