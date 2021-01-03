@@ -4,7 +4,7 @@
   "description": "cv shirt form API",
   "main": "src/index.js",
   "engines": {
-    "node": "12.x"
+    "node": "12.18.3"
   },
   "scripts": {
     "dev": "nodemon --exec babel-node src",
