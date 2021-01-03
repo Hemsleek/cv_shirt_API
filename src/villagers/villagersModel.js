@@ -13,15 +13,10 @@ const villagersSchema = new Schema({
     type: String,
     required,
   },
-  pattern: {
-    type: String,
-    required,
-  },
-  logo: {
+  patterns: {
     type: Array,
     required,
   },
-
 }, { timestamps: true });
 
 export default model('Villager', villagersSchema);

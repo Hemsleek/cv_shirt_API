@@ -9,8 +9,7 @@ export const registration = async (req, res) => {
       fullname: newVillager.fullname,
       color: newVillager.color,
       size: newVillager.size,
-      pattern: newVillager.pattern,
-      logo: newVillager.logo,
+      patterns: newVillager.patterns,
     });
   } catch (err) {
     res.status(500).json({ message: 'internal server response' });
@@ -18,10 +17,10 @@ export const registration = async (req, res) => {
 };
 
 export const allVillagers = async (req, res) => {
-  const excludeResult = '-createdAt -updatedAt -__v';
+  const excludeFromResult = '-createdAt -updatedAt -__v';
 
   try {
-    const Villagers = await Villager.find({}, excludeResult);
+    const Villagers = await Villager.find({}, excludeFromResult);
     res.json(Villagers);
   } catch (err) {
     res.status(500).send('internal server error');

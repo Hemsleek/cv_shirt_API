@@ -8,8 +8,7 @@ const registrationPolicy = async (req, res, next) => {
     fullname: joi.string().min(3).required(),
     color: joiString,
     size: joiString,
-    pattern: joiString,
-    logo: joi.array().required(),
+    patterns: joi.array().required(),
 
   });
   const { error } = regSchema.validate(req.body);
