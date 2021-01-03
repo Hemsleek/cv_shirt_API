@@ -1,13 +1,16 @@
 import Villager from './villagersModel';
 
+// eslint-disable-next-line consistent-return
 export const registration = async (req, res) => {
   const data = req.body;
+  const fullName = req.body.fullname;
   try {
+    const villagerExist = await Villager.countDocuments({ fullname: fullName });
+    if (villagerExist) return res.status(409).send(`villager with name ${fullName} exist`);
     const newVillager = await new Villager(data).save();
     res.json({
       _id: newVillager.id,
       fullname: newVillager.fullname,
-      color: newVillager.color,
       size: newVillager.size,
       patterns: newVillager.patterns,
     });

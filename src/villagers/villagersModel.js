@@ -8,7 +8,6 @@ const villagersSchema = new Schema({
     required,
     unique: true,
   },
-  color: { type: String, required },
   size: {
     type: String,
     required,

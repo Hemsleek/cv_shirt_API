@@ -1,13 +1,10 @@
 import joi from 'joi';
 
-const joiString = joi.string().required();
-
 // eslint-disable-next-line consistent-return
 const registrationPolicy = async (req, res, next) => {
   const regSchema = joi.object({
     fullname: joi.string().min(3).required(),
-    color: joiString,
-    size: joiString,
+    size: joi.string().required(),
     patterns: joi.array().required(),
 
   });
