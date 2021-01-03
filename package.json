@@ -10,7 +10,7 @@
     "dev": "nodemon --exec babel-node src",
     "start": "node dist/",
     "lint": "./node_modules/.bin/eslint . --fix",
-    "build": "npm run lint && babel src -d dist"
+    "build": "babel src -d dist"
   },
   "repository": {
     "type": "git",
