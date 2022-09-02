@@ -2,20 +2,22 @@ import { Schema, model } from 'mongoose';
 
 const required = true;
 
-const villagersSchema = new Schema({
+const usersSchema = new Schema({
   fullname: {
+    type: String,
+    required,
+  },
+  email: {
     type: String,
     required,
     unique: true,
   },
-  size: {
+  password: {
     type: String,
     required,
+
   },
-  patterns: {
-    type: Array,
-    required,
-  },
+
 }, { timestamps: true });
 
-export default model('Villager', villagersSchema);
+export default model('Users', usersSchema);

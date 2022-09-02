@@ -6,6 +6,7 @@ import helmet from 'helmet';
 import mongoose from 'mongoose';
 import { dbURL, port } from './utils/config';
 import apiRoutes from './routes';
+import usersRoute from './usersRoute';
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(morgan('dev'));
 app.use(cors());
 
 app.use('/api', apiRoutes);
+app.use('/api/users', usersRoute);
 
 app.get('/', (req, res) => {
   res.json({
